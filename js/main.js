@@ -1,27 +1,28 @@
-let max=0;
-let min=0;
-let suma=0;
-let ingreso=0;
-let flag=false;
+let nombre;
+let apuesta, saldo, posicion, juego;
+apuesta=0;
+saldo=100;
 
-for (let i = 0; i <5; i++) {
-    ingreso = parseInt(prompt("Ingresa un numero: ")); 
-    suma = suma + ingreso;
-    if (flag==false) {
-        max=ingreso;
-        min=ingreso;
-        console.log(min);
+nombre = prompt("Bienbenido al juego de la mosqueta, ingrese su nombre para continuar");
+alert(nombre + " cuentas con $100 de saldo inicial, diviertete" );
+do{
+    apuesta = prompt("Ingresa tu apuesta");
+    if (apuesta <= saldo) {
+        posicion = parseInt(prompt("Elige un vaso, 1, 2 o 3!"));
+        juego = Math.floor(Math.random() * 3)+1;
+        if (posicion == juego ) {
+            apuesta = apuesta * 2;
+            saldo = saldo + apuesta;
+            alert("Ganaste: " + apuesta + "\nTu saldo actual es: " + saldo);
+        }
+        else{
+            saldo = saldo - apuesta;
+            alert("Perdiste, el vaso correcto era: " + juego + "\nTu saldo actual es: " + saldo);
+        }
     }
-    if ((ingreso>max) && (flag==true)) {
-        max=ingreso;
+    else if (apuesta > saldo ) {
+        alert("La apuesta no puede ser mayor al saldo. Tu saldo es: " + saldo);
     }
-    if ((ingreso<min) && (flag==true)) {
-        min=ingreso;
-    }
-    flag=true;
-    console.log(ingreso);
 }
-console.log("El maximo es: " + max);
-console.log("El minimo es: " + min);
-console.log("La suma es: " + suma);
-
+while (saldo > 0);
+alert("Gracias por jugar")

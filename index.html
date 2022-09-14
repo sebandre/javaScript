@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Primera Pre entrega | Sebastian Gomez</title>
-  </head>
-  <body>
-    <h1>Primera Pre entrega</h1>
-    <script src="./js/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Cine</title>
+</head>
+<body>
+    <div class="peliculas">
+        <label>¿Que pelicula veremos?</label>
+        <select id="pelicula">
+            <option value="100">Nop! ($100)</option>
+            <option value="300">Dragon Ball Super: Super Hero ($300)</option>
+            <option value="150">El Teléfono Negro ($150)</option>
+            <option value="250"> Minions Nace Un Villano ($250)</option>
+            <option value="200">Thor Amor y Trueno ($200)</option>
+        </select>
+    </div>
+    <div class="asientos" id="asientosCont">
+    </div>
+    <button id="btnComprar">
+        Comprar
+    </button>
+    <script src="/js/main.js"></script>
+</body>
 </html>

@@ -1,23 +1,30 @@
 let continuar = true;
-const productos = [
-    { id: 1, nombre: "Intel I3", modelo: "10100F Comet Lake",  precio: 105},
-    { id: 2, nombre: "Intel I3", modelo: "12100F Alder Lake ", precio: 155},
-    { id: 3, nombre: "Intel I5", modelo: "11400F Rocket Lake", precio: 215},
-    { id: 4, nombre: "Intel I5", modelo: "12400F Alder Lake", precio: 270},
-    { id: 5, nombre: "Intel I7", modelo: "11700F Rocket Lake", precio: 450},
-    { id: 6, nombre: "Intel I7", modelo: "12700 Alder Lake", precio: 530},
-    { id: 7, nombre: "Intel I9", modelo: "10900KF Comet Lake", precio: 600},
-    { id: 8, nombre: "Intel I9", modelo: "12900KF Alder Lake", precio: 900},
-    { id: 9, nombre: "Intel I9", modelo: "7900x X-series", precio: 1400},
-  ];
-  console.log(productos);
-  
-function agregar(id, nombre, modelo, precio){
+let productos = [];
+let carrito = [];
+
+class Productos{
+  constructor(id, nombre, modelo, precio){
     this.id=id;
     this.nombre=nombre;
-    this.modelo=modelo;1
+    this.modelo=modelo.toUpperCase();
     this.precio=precio;
-};
+  }
+}
+
+function agregar(){
+  productos.push(new Productos(1, "Intel I3", "10100F Comet Lake",  105));
+  productos.push(new Productos(2, "Intel I3", "12100F Alder Lake ", 155));
+  productos.push(new Productos(3, "Intel I5", "11400F Rocket Lake", 215));
+  productos.push(new Productos(4, "Intel I5", "12400F Alder Lake", 270));
+  productos.push(new Productos(5, "Intel I7", "11700F Rocket Lake", 450));
+  productos.push(new Productos(6, "Intel I7", "12700 Alder Lake", 530));
+  productos.push(new Productos(7, "Intel I9", "10900KF Comet Lake", 600));
+  productos.push(new Productos(8, "Intel I9", "12900KF Alder Lake", 900));
+  productos.push(new Productos(9, "Intel I9", "7900x X-series", 1400));
+  console.log(productos);
+}
+
+agregar();
   
 do {
   let opcion = prompt("Selecione una opcion\n1: Agregar productos\n2: Comprar\n3: Salir");
@@ -27,12 +34,15 @@ do {
       let ultimaid = productos[productos.length-1];
       let nombreN = prompt("Ingrese el nombre del producto");
       let modeloN = prompt("Ingrese el modelo");
-      let precioN = prompt("Ingrese precio");
-      const nuevoProducto = new agregar(ultimaid.id+1, nombreN, modeloN, precioN);
-      productos.push(nuevoProducto);
+      let precioN = parseInt(prompt("Ingrese precio"));
+      productos.push(new Productos(ultimaid.id+1, nombreN, modeloN, precioN));
       console.log(productos);
     break;
     case "2":
+      let buscar = prompt("Modelo").toUpperCase();
+      let resultado = productos.filter((el)=>el.modelo.includes(buscar));
+      carrito.push(resultado);
+      console.log(carrito);
       
     break;
     case "3":

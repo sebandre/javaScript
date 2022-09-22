@@ -33,7 +33,6 @@ const seleccionado = e => e.target.classList.toggle("selec");
 for (asiento of ocu){
     asiento.addEventListener("click", seleccionado);
      cantidad = cantidad+1;
-     console.log(cantidad);
 }
 
 
@@ -44,8 +43,33 @@ const comprar = () => {
         if(asiento.classList.contains("selec")){
           asiento.classList.add("comprado")
           asiento.classList.remove("selec")
+          console.log(asiento);
         }  
     })
 }
-
 btnComprar.addEventListener("click", comprar)
+
+
+//darkmode
+const btnoscuro = document.querySelector("#oscuro");
+const body = document.querySelector("body");
+btnoscuro.addEventListener("click", e=>{
+    body.classList.toggle("oscuro");
+    almacena(body.classList.contains("oscuro"));
+});
+
+cargar();
+
+function cargar() {
+    const oscuro = localStorage.getItem("oscuro");
+    if (!oscuro) {
+        almacena("false");
+    }
+    else if (oscuro == "true") {
+        body.classList.add("oscuro");
+    }
+}
+
+function almacena(valor) {
+    localStorage.setItem("oscuro", valor);
+}

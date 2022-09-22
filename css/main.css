@@ -24,7 +24,7 @@ body{
 }
 
 .asiento.selec{
-    background-color: wheat;
+    background-color: cyan;
     transition: 0.5s;
 }
 
@@ -34,4 +34,14 @@ body{
 }
 .peliculas{
     margin: 30px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+body.oscuro{
+    background-color: floralwhite;
+    color: black;
 }

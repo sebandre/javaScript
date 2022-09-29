@@ -43,7 +43,7 @@ const comprar = () => {
         if(asiento.classList.contains("selec")){
           asiento.classList.add("comprado")
           asiento.classList.remove("selec")
-          console.log(asiento);
+          swal("Compra realizada con exito", "", "success");
         }  
     })
 }

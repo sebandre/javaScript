@@ -1,0 +1,27 @@
+[
+    {
+       "id":1,
+       "nombre":"Nop!",
+       "precio":100
+    },
+    {
+       "id":2,
+       "nombre":"Dragon Ball Super: Super Hero",
+       "precio":300
+    },
+    {
+       "id":3,
+       "nombre":"El Teléfono Negro",
+       "precio":150
+    },
+    {
+       "id":4,
+       "nombre":"Miniones Nace Un Villano",
+       "precio":250
+    },
+    {
+       "id":5,
+       "nombre":"Thor Amor y Truenon",
+       "precio":200
+    }
+ ]

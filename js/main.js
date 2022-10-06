@@ -1,6 +1,7 @@
 const asientos = document.getElementById("asientosCont");
 let objetoAsientos = [];
 let cantidad;
+const pelicula = document.querySelector(".pelicula");
 
 
 class asiento{
@@ -73,3 +74,23 @@ function cargar() {
 function almacena(valor) {
     localStorage.setItem("oscuro", valor);
 }
+
+fetch("./json/data.json")
+.then(res => res.json())
+.then (data =>{
+    console.log(data);
+    cargarPelicula(data);
+}) 
+    
+const cargarPelicula = (arr) => {
+    let html;
+    for (const item of arr){
+        const {id, nombre, precio} = item;
+        html = `
+            
+                <option value="${id}">${nombre} $${precio}</option>
+            `; 
+        pelicula.innerHTML += html;
+    }
+}
+

@@ -2,7 +2,8 @@
     {
        "id":1,
        "nombre":"Nop!",
-       "precio":100
+       "precio":100,
+       "img":"nope.jpg"
     },
     {
        "id":2,
@@ -16,7 +17,7 @@
     },
     {
        "id":4,
-       "nombre":"Miniones Nace Un Villano",
+       "nombre":"Minions Nace Un Villano",
        "precio":250
     },
     {

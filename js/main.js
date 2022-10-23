@@ -59,7 +59,7 @@ const comprar = () => {
           asiento.classList.remove("selec");
           swal("Compra realizada con exito", "", "success");
           cantidad = 0;
-          parrafo.innerHTML = "Cantidad de asientos " + cantidad;
+          parrafo.innerHTML = "Cantidad de asientos " + cantidad + ", total a pagar $ " + cantidad*price;
           guardarLocal();
         }   
     })
